@@ -5,26 +5,20 @@
   },
   "apps": [
     {
-      "root": "src",
+      "root": "demo",
       "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
-      "test": "test.ts",
-      "tsconfig": "../tsconfig.json",
-      "prefix": "app",
+      "tsconfig": "tsconfig.demo.json",
+      "prefix": "demo",
       "styles": [
         "styles.css"
       ],
       "scripts": [],
-      "environmentSource": "environments/environment.ts",
+      "environmentSource": "environment.ts",
       "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
+        "dev": "environment.ts"
       }
     }
   ],

@@ -6,6 +6,8 @@
     "module": "./esm5/material-contextual-menu.js",
     "es2015": "./esm2015/material-contextual-menu.js",
     "scripts": {
+        "ng": "ng",
+        "start": "ng serve",
         "build": "node build.js",
         "test": "karma start",
         "pack:lib": "npm run build && npm pack ./dist",
@@ -44,10 +46,13 @@
     "devDependencies": {
         "@angular/animations": "5.0.0",
         "@angular/cdk": "5.1.0",
+        "@angular/cli": "1.6.5",
         "@angular/common": "5.0.0",
         "@angular/compiler": "5.0.0",
         "@angular/compiler-cli": "5.0.0",
         "@angular/core": "5.0.0",
+        "@angular/forms": "5.0.0",
+        "@angular/language-service": "5.0.0",
         "@angular/material": "5.1.0",
         "@angular/platform-browser": "5.0.0",
         "@angular/platform-browser-dynamic": "5.0.0",
