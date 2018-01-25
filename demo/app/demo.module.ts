@@ -5,11 +5,13 @@ import { MatMenuModule } from '@angular/material';
 import { MenuAComponent } from './menu-a.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExpectedMenuComponent } from './expected-menu.component';
+import { MenuBComponent } from './menu-b.component';
 
 @NgModule({
   declarations: [
     DemoComponent,
     MenuAComponent,
+    MenuBComponent,
     ExpectedMenuComponent,
   ],
   imports: [
@@ -19,6 +21,6 @@ import { ExpectedMenuComponent } from './expected-menu.component';
   ],
   providers: [],
   bootstrap: [DemoComponent],
-  entryComponents: [MenuAComponent],
+  entryComponents: [MenuAComponent, MenuBComponent],
 })
 export class DemoModule {}
