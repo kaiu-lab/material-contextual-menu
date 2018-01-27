@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, ViewChild } from '@angular/core';
 import { MenuContainer } from '@kaiu/material-contextual-menu';
 import { MatMenu } from '@angular/material';
 
@@ -11,14 +11,14 @@ import { MatMenu } from '@angular/material';
       </mat-menu>
 
       <mat-menu #felin="matMenu">
-          <button mat-menu-item>Cat</button>
-          <button mat-menu-item>Lion</button>
-          <button mat-menu-item>Tiger</button>
+          <button mat-menu-item (click)="select.emit('cat')">Cat</button>
+          <button mat-menu-item (click)="select.emit('lion')">Lion</button>
+          <button mat-menu-item (click)="select.emit('tiger')">Tiger</button>
       </mat-menu>
 
       <mat-menu #doggo="matMenu">
-          <button mat-menu-item>Waf</button>
-          <button mat-menu-item>Wouf</button>
+          <button mat-menu-item (click)="select.emit({sound: 'waf'})">Waf</button>
+          <button mat-menu-item (click)="select.emit({sound: 'wouf'})">Wouf</button>
       </mat-menu>
       
   `,
@@ -28,4 +28,5 @@ export class MenuBComponent implements MenuContainer {
 
   @ViewChild('mainMenu') matMenu: MatMenu;
 
+  select = new EventEmitter<any>();
 }
