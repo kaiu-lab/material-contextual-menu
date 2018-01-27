@@ -13,8 +13,8 @@
         "pack:lib": "npm run build && npm pack ./dist",
         "publish:lib": "npm run build && npm publish ./dist",
         "publish:lib:next": "npm run build && npm publish --tag next ./dist",
-        "compodoc": "compodoc -p tsconfig.json --disablePrivate --disableGraph --disableInternal -d docs",
-        "compodoc:serve": "compodoc -s -d docs"
+        "compodoc": "compodoc -p tsconfig.json --disablePrivate --disableGraph --disableInternal",
+        "compodoc:serve": "compodoc -s"
     },
     "typings": "./material-contextual-menu.d.ts",
     "author": "Noémi Salaün",
