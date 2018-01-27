@@ -1,7 +1,7 @@
 {
     "name": "@kaiu/material-contextual-menu",
-    "version": "0.0.1",
-    "description": "TODO",
+    "version": "0.1.0",
+    "description": "This package provide an @angular/material compatible contextual menu.",
     "main": "./bundles/material-contextual-menu.umd.js",
     "module": "./esm5/material-contextual-menu.js",
     "es2015": "./esm2015/material-contextual-menu.js",
@@ -13,7 +13,7 @@
         "pack:lib": "npm run build && npm pack ./dist",
         "publish:lib": "npm run build && npm publish ./dist",
         "publish:lib:next": "npm run build && npm publish --tag next ./dist",
-        "compodoc": "compodoc -p tsconfig.json",
+        "compodoc": "compodoc -p tsconfig.json --disablePrivate --disableGraph --disableInternal",
         "compodoc:serve": "compodoc -s"
     },
     "typings": "./material-contextual-menu.d.ts",
@@ -57,7 +57,7 @@
         "@angular/platform-browser": "5.0.0",
         "@angular/platform-browser-dynamic": "5.0.0",
         "@angular/platform-server": "5.0.0",
-        "@compodoc/compodoc": "1.0.3",
+        "@compodoc/compodoc": "1.0.5",
         "@types/jasmine": "2.6.2",
         "@types/node": "8.0.47",
         "chalk": "2.3.0",

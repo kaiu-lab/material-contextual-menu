@@ -44,8 +44,12 @@ import sourcemaps from 'rollup-plugin-sourcemaps';
 const globals = {
     '@angular/core': 'ng.core',
     '@angular/common': 'ng.common',
+    '@angular/material': 'ng.material',
+    '@angular/cdk/overlay': 'ng.cdk.overlay',
+    '@angular/cdk/bidi': 'ng.cdk.bidi',
+    '@angular/cdk/portal': 'ng.cdk.portal',
     'rxjs/Observable': 'Rx',
-    'rxjs/Observer': 'Rx'
+    'rxjs/operators': 'Rx',
 };
 
 export default {
@@ -58,6 +62,6 @@ export default {
         globals: globals,
         sourcemap: true,
         exports: 'named',
-        amd: { id: 'material-contextual-menu' }
+        amd: { id: '@kaiu/material-contextual-menu' }
     }
 }

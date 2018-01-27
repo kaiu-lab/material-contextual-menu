@@ -1,9 +1,8 @@
 import { Component, DoCheck, HostListener, OnDestroy, ViewContainerRef } from '@angular/core';
 import { KaiuMenuService } from '@kaiu/material-contextual-menu';
-import { MenuAComponent } from './menu-a.component';
+import { AData, MenuAComponent } from './menu-a.component';
 import { MenuBComponent } from './menu-b.component';
 import { takeUntil } from 'rxjs/operators';
-import { merge } from 'rxjs/observable/merge';
 import { Subject } from 'rxjs/Subject';
 
 @Component({
@@ -15,7 +14,10 @@ export class DemoComponent implements DoCheck, OnDestroy {
 
   private _onDestroy$ = new Subject<void>();
 
+  private _nbClicks = 0;
+
   @HostListener('contextmenu', ['$event']) onContextMenu(event: MouseEvent) {
+    this._nbClicks++;
     event.preventDefault();
     if (event.clientY < 300) {
       this._openA(event.clientX, event.clientY);
@@ -41,22 +43,32 @@ export class DemoComponent implements DoCheck, OnDestroy {
   }
 
   private _openA(x: number, y: number) {
-    const menuA = this._menuService.openMenu(MenuAComponent, { x, y }, this._viewContainerRef);
-
-    menuA.menuContainer.choose.pipe(
-        takeUntil(merge(this._onDestroy$, menuA.afterClosed)),
-    ).subscribe((value) => {
-      console.log('clicked A', value);
-    });
+    const data: AData = [
+      { label: 'First ' + this._nbClicks, value: { foo: 'bar', click: this._nbClicks } },
+      { label: 'Second ' + this._nbClicks, value: 'hello' },
+      { label: 'Third ' + this._nbClicks, value: [1, 2, 3, 4, 5] },
+    ];
+    this._menuService.openMenu<MenuAComponent, AData>(MenuAComponent, { x, y }, this._viewContainerRef, data)
+        .afterClosed()
+        .pipe(takeUntil(this._onDestroy$))
+        .subscribe((value) => {
+          if (value) {
+            console.log('menu A closed with value: ', value);
+          } else {
+            console.log('menu A closed without value.');
+          }
+        });
   }
 
   private _openB(x: number, y: number) {
-    const menuB = this._menuService.openMenu(MenuBComponent, { x, y }, this._viewContainerRef);
-
-    menuB.menuContainer.select.pipe(
-        takeUntil(merge(this._onDestroy$, menuB.afterClosed)),
-    ).subscribe((value) => {
-      console.log('clicked B', value);
-    });
+    this._menuService.openMenu(MenuBComponent, { x, y }, this._viewContainerRef).afterClosed()
+        .pipe(takeUntil(this._onDestroy$))
+        .subscribe((value) => {
+          if (value) {
+            console.log('menu B closed with value: ', value);
+          } else {
+            console.log('menu B closed without value.');
+          }
+        });
   }
 }
