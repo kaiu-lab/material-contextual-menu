@@ -1,0 +1,29 @@
+{
+  "name": "@kaiu/material-contextual-menu",
+  "version": "9.0.0",
+  "description": "This package provide an @angular/material compatible contextual menu.",
+  "author": "Noémi Salaün",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaiu-lab/material-contextual-menu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kaiu-lab/material-contextual-menu/issues"
+  },
+  "homepage": "https://github.com/kaiu-lab/material-contextual-menu",
+  "keywords": [
+    "angular",
+    "material",
+    "menu",
+    "javascript",
+    "typescript"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": ">= 9.0.0",
+    "@angular/core": ">= 9.0.0",
+    "@angular/material": ">= 9.0.0",
+    "@angular/cdk": ">= 9.0.0",
+    "tslib": "^1.10.0"
+  }
+}

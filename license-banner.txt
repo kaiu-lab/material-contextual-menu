@@ -1,4 +1,0 @@
-/**
- * @license @kaiu/material-contextual-menu
- * MIT license
- */
