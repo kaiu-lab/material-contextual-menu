@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "material-contextual-menu": {
@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "material-contextual-menu"
+  "defaultProject": "material-contextual-menu",
+  "cli": {
+    "analytics": false
+  }
 }
