@@ -24,18 +24,6 @@
               "tsConfig": "projects/material-contextual-menu/tsconfig.lib.prod.json"
             }
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/material-contextual-menu/tsconfig.lib.json",
-              "projects/material-contextual-menu/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     },
