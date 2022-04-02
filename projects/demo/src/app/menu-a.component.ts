@@ -62,7 +62,7 @@ export type AData = {value: any, label: string}[];
 })
 export class MenuAComponent implements KaiuMenuContainer<string> {
 
-  @ViewChild('mainMenu') matMenu: MatMenu;
+  @ViewChild('mainMenu') matMenu!: MatMenu;
 
   constructor(@Inject(KAIU_MENU_DATA) public data: AData) {}
 

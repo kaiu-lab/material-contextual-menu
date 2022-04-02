@@ -26,7 +26,7 @@ import { MatMenu } from '@angular/material/menu';
 })
 export class MenuBComponent implements KaiuMenuContainer {
 
-  @ViewChild('mainMenu') matMenu: MatMenu;
+  @ViewChild('mainMenu') matMenu!: MatMenu;
 
   select = new EventEmitter<any>();
 }
