@@ -1,6 +1,6 @@
 {
   "name": "@kaiu/material-contextual-menu",
-  "version": "9.0.0",
+  "version": "13.0.0",
   "description": "This package provide an @angular/material compatible contextual menu.",
   "author": "Noémi Salaün",
   "repository": {
