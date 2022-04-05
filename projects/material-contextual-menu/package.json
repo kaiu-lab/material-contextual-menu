@@ -1,6 +1,6 @@
 {
   "name": "@kaiu/material-contextual-menu",
-  "version": "13.0.0",
+  "version": "13.0.1",
   "description": "This package provide an @angular/material compatible contextual menu.",
   "author": "Noémi Salaün",
   "repository": {
@@ -20,10 +20,10 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^13.3.0",
-    "@angular/core": "^13.3.0",
-    "@angular/material": "^13.3.0",
-    "@angular/cdk": "^13.3.0"
+    "@angular/common": "^13.0.0",
+    "@angular/core": "^13.0.0",
+    "@angular/material": "^13.0.0",
+    "@angular/cdk": "^13.0.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"
