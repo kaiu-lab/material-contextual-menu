@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 16.0.0 (2024-01-18)
+
+- Compatibility with Angular 16.
+
+## 15.0.0 (2023-01-10)
+
+- Compatibility with Angular 15.
+
 ## 14.0.0 (2022-06-21)
 
 - Compatibility with Angular 14.

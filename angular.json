@@ -16,7 +16,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/material-contextual-menu/ng-package.json"
+            "project": "projects/material-contextual-menu/ng-package.json",
+            "tsConfig": "projects/material-contextual-menu/tsconfig.lib.json"
           },
           "configurations": {
             "production": {
