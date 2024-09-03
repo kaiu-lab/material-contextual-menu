@@ -56,6 +56,8 @@ export class KaiuMenuRef<T extends KaiuMenuContainer<R>, R = any> {
 
   /** Closes the menu and does the necessary cleanup. */
   private _destroyMenu() {
+    if (!this._overlayRef.hasAttached()) return;
+
     this._overlayRef.detach();
     this._menuContainerRef.instance.matMenu._resetAnimation();
 
