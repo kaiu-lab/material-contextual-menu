@@ -107,4 +107,4 @@ Run `npm start` and then go to `http://localhost:4200`.
 
 Everything in this repository is licensed under the MIT License unless otherwise specified.
 
-Copyright (c) 2024 - Kaiu Lab
+Copyright (c) 2025 - Kaiu Lab
