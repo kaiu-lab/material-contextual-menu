@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 19.0.0 (2025-02-18)
+
+- Compatibility with Angular 19.
+
 ## 18.0.1 (2024-09-03)
 
 - Prevent multi-emit when multi-clics on menu item.

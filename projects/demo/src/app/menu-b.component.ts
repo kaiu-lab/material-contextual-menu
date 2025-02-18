@@ -3,8 +3,8 @@ import { KaiuMenuContainer } from '@kaiu/material-contextual-menu';
 import { MatMenu } from '@angular/material/menu';
 
 @Component({
-  selector: 'demo-menu-b',
-  template: `
+    selector: 'demo-menu-b',
+    template: `
       <mat-menu #mainMenu="matMenu">
           <button mat-menu-item [matMenuTriggerFor]="felin">Felin</button>
           <button mat-menu-item [matMenuTriggerFor]="doggo">Doggo</button>
@@ -22,7 +22,8 @@ import { MatMenu } from '@angular/material/menu';
       </mat-menu>
 
   `,
-  styles: [],
+    styles: [],
+    standalone: false
 })
 export class MenuBComponent implements KaiuMenuContainer {
 
