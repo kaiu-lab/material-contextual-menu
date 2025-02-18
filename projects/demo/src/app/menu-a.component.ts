@@ -5,8 +5,8 @@ import { MatMenu } from '@angular/material/menu';
 export type AData = {value: any, label: string}[];
 
 @Component({
-  selector: 'demo-menu-a',
-  template: `
+    selector: 'demo-menu-a',
+    template: `
       <mat-menu #mainMenu="matMenu">
           <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
           <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
@@ -58,7 +58,8 @@ export type AData = {value: any, label: string}[];
           <button mat-menu-item disabled>Velociraptor</button>
       </mat-menu>
   `,
-  styles: [],
+    styles: [],
+    standalone: false
 })
 export class MenuAComponent implements KaiuMenuContainer<string> {
 

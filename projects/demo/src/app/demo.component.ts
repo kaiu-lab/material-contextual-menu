@@ -6,9 +6,10 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'demo-root',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.css'],
+    selector: 'demo-root',
+    templateUrl: './demo.component.html',
+    styleUrls: ['./demo.component.css'],
+    standalone: false
 })
 export class DemoComponent implements DoCheck, OnDestroy {
 

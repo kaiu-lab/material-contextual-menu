@@ -27,7 +27,7 @@ export class KaiuMenuRef<T extends KaiuMenuContainer<R>, R = any> {
   private _afterDestroy = new EventEmitter<void>();
 
   constructor(private _overlayRef: OverlayRef, private _menuContainerRef: ComponentRef<T>) {
-    _menuContainerRef.instance.matMenu._startAnimation();
+    _menuContainerRef.instance.matMenu._setIsOpen(true);
 
     // Listen for the first selected item.
     _menuContainerRef.instance.select.pipe(
@@ -59,7 +59,7 @@ export class KaiuMenuRef<T extends KaiuMenuContainer<R>, R = any> {
     if (!this._overlayRef.hasAttached()) return;
 
     this._overlayRef.detach();
-    this._menuContainerRef.instance.matMenu._resetAnimation();
+    this._menuContainerRef.instance.matMenu._setIsOpen(false);
 
     // MatMenu public API doesn't provide a way to subscribe to the animationEnd,
     // but we know the duration of the animation.
@@ -69,5 +69,4 @@ export class KaiuMenuRef<T extends KaiuMenuContainer<R>, R = any> {
       this._afterDestroy.emit();
     }, MAT_FADE_OUT_TIME);
   }
-
 }
