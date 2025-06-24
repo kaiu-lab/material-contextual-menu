@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 20.0.0 (2025-06-24)
+
+- Compatibility with Angular 20.
+
 ## 19.0.0 (2025-02-18)
 
 - Compatibility with Angular 19.
