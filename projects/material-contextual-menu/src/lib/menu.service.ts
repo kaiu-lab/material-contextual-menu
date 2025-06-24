@@ -1,18 +1,10 @@
-import {
-  ComponentFactoryResolver,
-  ComponentRef,
-  Injectable,
-  Injector,
-  Optional,
-  Type,
-  ViewContainerRef,
-} from '@angular/core';
+import { ComponentFactoryResolver, ComponentRef, Injectable, Injector, Optional, Type, ViewContainerRef } from '@angular/core';
 import { KaiuMenuRef } from './menu-ref';
 import { MenuPosition } from './menu-position';
 import { KaiuMenuContainer } from './menu-container';
 import { GlobalPositionStrategy, Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
 import { Direction, Directionality } from '@angular/cdk/bidi';
-import { PortalInjector, TemplatePortal } from '@angular/cdk/portal';
+import { TemplatePortal } from '@angular/cdk/portal';
 import { MatMenu } from '@angular/material/menu';
 import { KAIU_MENU_DATA } from './menu-injectors';
 
@@ -143,13 +135,18 @@ export class KaiuMenuService {
   /**
    * Creates a custom injector to be used inside the menu container.
    */
-  private _createInjector<D = any>(viewContainerRef: ViewContainerRef, data?: D): PortalInjector {
-    const userInjector = viewContainerRef.injector;
-    const injectionTokens = new WeakMap();
+  private _createInjector<D = any>(viewContainerRef: ViewContainerRef, data?: D): Injector {
+    const userInjector = viewContainerRef.injector || this._injector;
 
-    injectionTokens.set(KAIU_MENU_DATA, data);
-
-    return new PortalInjector(userInjector || this._injector, injectionTokens);
+    return Injector.create({
+      providers: [
+        {
+          provide: KAIU_MENU_DATA,
+          useValue: data
+        }
+      ],
+      parent: userInjector
+    });
   }
 
   /**
