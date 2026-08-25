@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Inject, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Inject, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { KaiuMenuContainer, KAIU_MENU_DATA } from '@kaiu/material-contextual-menu';
 import { MatMenu } from '@angular/material/menu';
 
@@ -59,6 +59,7 @@ export type AData = {value: any, label: string}[];
       </mat-menu>
   `,
     styles: [],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class MenuAComponent implements KaiuMenuContainer<string> {

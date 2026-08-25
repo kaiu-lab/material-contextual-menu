@@ -1,4 +1,4 @@
-import { Component, DoCheck, HostListener, OnDestroy, ViewContainerRef } from '@angular/core';
+import { Component, DoCheck, HostListener, OnDestroy, ViewContainerRef, ChangeDetectionStrategy } from '@angular/core';
 import { KaiuMenuService } from '@kaiu/material-contextual-menu';
 import { AData, MenuAComponent } from './menu-a.component';
 import { MenuBComponent } from './menu-b.component';
@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
     selector: 'demo-root',
     templateUrl: './demo.component.html',
     styleUrls: ['./demo.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class DemoComponent implements DoCheck, OnDestroy {

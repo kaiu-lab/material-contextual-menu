@@ -1,4 +1,4 @@
-import { Component, EventEmitter, ViewChild } from '@angular/core';
+import { Component, EventEmitter, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { KaiuMenuContainer } from '@kaiu/material-contextual-menu';
 import { MatMenu } from '@angular/material/menu';
 
@@ -23,6 +23,7 @@ import { MatMenu } from '@angular/material/menu';
 
   `,
     styles: [],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class MenuBComponent implements KaiuMenuContainer {
