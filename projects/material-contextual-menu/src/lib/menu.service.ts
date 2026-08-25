@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, ComponentRef, Injectable, Injector, Optional, Type, ViewContainerRef } from '@angular/core';
+import { ComponentRef, Injectable, Injector, Optional, Type, ViewContainerRef } from '@angular/core';
 import { KaiuMenuRef } from './menu-ref';
 import { MenuPosition } from './menu-position';
 import { KaiuMenuContainer } from './menu-container';
@@ -19,7 +19,6 @@ export class KaiuMenuService {
 
   constructor(
       private _overlay: Overlay,
-      private _resolver: ComponentFactoryResolver,
       private _injector: Injector,
       @Optional() private _dir: Directionality) {}
 
@@ -124,9 +123,8 @@ export class KaiuMenuService {
    */
   private _createMenuContainer<T extends KaiuMenuContainer, D = any>(
       menuContainer: Type<T>, viewContainerRef: ViewContainerRef, data?: D): ComponentRef<T> {
-    const factory = this._resolver.resolveComponentFactory(menuContainer);
     const injector = this._createInjector(viewContainerRef, data);
-    const containerRef = viewContainerRef.createComponent(factory, undefined, injector);
+    const containerRef = viewContainerRef.createComponent(menuContainer, { injector });
     containerRef.changeDetectorRef.detectChanges();
 
     return containerRef;
