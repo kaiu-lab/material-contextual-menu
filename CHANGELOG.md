@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 22.0.0 (2026-08-25)
+
+- Compatibility with Angular 22.
+
 ## 21.0.0 (2026-01-05)
 
 - Compatibility with Angular 21.
